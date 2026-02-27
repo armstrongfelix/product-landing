@@ -69,7 +69,7 @@ body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
-  max-width: 100%;
+  width: 100%;
 }
 
 a,
@@ -96,7 +96,7 @@ button {
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid blue; */
-  height: 64px;
+  height: fit-content;
   padding: 0 var(--padding-medium);
 }
 
@@ -180,7 +180,7 @@ button {
     font-weight: 600;
   }
 
-  .cta-button {
+  #hero-cta-button {
     display: none;
   }
 }
@@ -245,6 +245,11 @@ h1 span {
   max-height: 50vh;
 }
 
+main {
+  width: 100%;
+  /* border: 2px solid blue; */
+}
+
 .features {
   width: 100%;
   height: fit-content;
@@ -254,24 +259,29 @@ h1 span {
   align-items: center;
   gap: 20px;
   padding: 20px;
+  /* border: 5px solid rgb(0, 255, 102); */
 }
 h2 {
   text-align: center;
   font-size: 40px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(192, 25, 25);
+  /* border: 5px solid black; */
+  width: 100vw;
 }
 
-.products {
-  max-width: 600px;
+#products {
+  width: 80%;
+  /* border: solid red; */
   background: var(--background-color);
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
-  column-gap: var(--gap-medium);
-  /* padding: 100px 20px; */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: var(--gap-xlarge);
+  row-gap: var(--gap-xxlarge);
+  padding: 100px 20px;
   justify-content: center;
   align-items: center;
-  /* border-radius: 20px; */
+  border-radius: 20px;
 }
 
 /* @media (max-width: 768px) {
@@ -294,11 +304,15 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  column-gap: var(--gap-xxlarge);
+  row-gap: var(--gap-xlarge);
   background: white;
-  padding: 5px 10px;
+  padding: var(--padding-small) var(--padding-medium);
   border-radius: 20px;
   border: 1px solid var(--background-color-secondary);
+  max-width: 80%;
+  height: fit-content;
+  margin: 0 auto;
 }
 
 .product:hover {
